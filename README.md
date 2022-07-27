@@ -24,4 +24,4 @@ python scanNet.py -H http://grafana_server.com:3000 -U admin -P admin -p http://
 - -p is URL of the proxy server
 
 The script is checking each port from the ports file on every IP address from the ip file.
-In listed result you can see If port is open or not.
+In the result you can see If port is open or not.

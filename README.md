@@ -26,5 +26,5 @@ python scanNet.py -H http://grafana_server.com:3000 -U admin -P admin -p http://
 The script is checking each port from the ports file on every IP address from the ip file.
 In the result you can see If port is open or not.
 
-
+<br>
 This project was developed as a part of [Digital Security](https://github.com/DSecurity) internship in the department of web security audit ["Summer of Hack 2022"](https://dsec.ru/about/vacancies/#internship).
